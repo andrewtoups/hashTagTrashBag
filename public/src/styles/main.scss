@@ -1,0 +1,8 @@
+@import 'partials/bourbon/bourbon';
+@import 'partials/animate';
+//
+.login {
+  @include linear-gradient(orange, pink);
+  width: 100px;
+  height: 100px
+}

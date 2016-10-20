@@ -1,0 +1,25 @@
+@import 'partials/bourbon/bourbon';
+@import 'partials/animate';
+
+//
+#game-container{
+  height: 500px;
+  width: 800px;
+  background: whitesmoke;
+  margin: 50px auto;
+  position: relative;
+}
+
+#test-content, #test-button{
+  font-size: 40px;
+}
+
+.linearRise {
+  @include animation-name(linearRise);
+}
+
+@keyframes linearRise {
+  100% {
+    @include transform(translateY(-30px));
+  }
+}

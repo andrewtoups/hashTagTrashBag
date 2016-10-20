@@ -1,0 +1,7 @@
+dist/*
+*.css.map
+node_modules
+*.sass-cache
+.DS-Store
+Gruntfile.js
+package.json
