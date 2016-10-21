@@ -9,52 +9,62 @@
   <body>
     <main>
       <div id='game-container'></div>
-      <button id='test-button' type='button'>try it out</button>
-      <button id='random-button' type='button'>random graphic</button>
-      <button id='screen-shake' type='button'>screen shake!</button>
-      <select id='test-method' name='select method'>
-        <option value='acquire'>acquire</option>
-        <option value='hinge'>hinge</option>
-        <option value='zoomIn'>zoomIn</option>
-      </select>
-      <select id='test-file' name='select badge'>
-        <option value='images/apple.svg'>apple.svg</option>
-        <option value='images/bowling.svg'>bowling.svg</option>
-        <option value='images/box.svg'>box.svg</option>
-        <option value='images/cabbage.svg'>cabbage.svg</option>
-        <option value='images/cactus.svg'>cactus.svg</option>
-        <option value='images/can.svg'>can.svg</option>
-        <option value='images/cat.svg'>cat.svg</option>
-        <option value='images/cleaver.svg'>cleaver.svg</option>
-        <option value='images/cockroach.svg'>cockroach.svg</option>
-        <option value='images/coffin.svg'>coffin.svg</option>
-        <option value='images/cookie.svg'>cookie.svg</option>
-        <option value='images/cup.svg'>cup.svg</option>
-        <option value='images/fish.svg'>fish.svg</option>
-        <option value='images/floppydisk.svg'>floppydisk.svg</option>
-        <option value='images/gyro.svg'>gyro.svg</option>
-        <option value='images/heart.svg'>heart.svg</option>
-        <option value='images/knife.svg'>knife.svg</option>
-        <option value='images/pill.svg'>pill.svg</option>
-        <option value='images/pillbottle.svg'>pillbottle.svg</option>
-        <option value='images/potatoes.svg'>potatoes.svg</option>
-        <option value='images/pumpkin.svg'>pumpkin.svg</option>
-        <option value='images/r2d2.svg'>r2d2.svg</option>
-        <option value='images/rainbow.svg'>rainbow.svg</option>
-        <option value='images/scissors.svg'>scissors.svg</option>
-        <option value='images/shoe.svg'>shoe.svg</option>
-        <option value='images/skateboard.svg'>skateboard.svg</option>
-        <option value='images/smartphone.svg'>smartphone.svg</option>
-        <option value='images/snowglobe.svg'>snowglobe.svg</option>
-        <option value='images/sofa.svg'>sofa.svg</option>
-        <option value='images/swissarmyknife.svg'>swissarmyknife.svg</option>
-        <option value='images/teabag.svg'>teabag.svg</option>
-        <option value='images/tentacle.svg'>tentacle.svg</option>
-        <option value='images/triangle.svg'>triangle.svg</option>
-        <option value='images/umbrella.svg'>umbrella.svg</option>
-        <option value='images/voodoodoll.svg'>voodoodoll.svg</option>
-        <option value='images/wallet.svg'>wallet.svg</option>
-      </select>
+      <div class='temp-objects'>
+        <button id='temp-button' type='button'>temp object</button>
+        <button id='random-button' type='button'>random graphic</button>
+        <select id='test-file' name='select badge'>
+          <option disable selected>select badge</option>
+          <option value='images/apple.svg'>apple.svg</option>
+          <option value='images/bowling.svg'>bowling.svg</option>
+          <option value='images/box.svg'>box.svg</option>
+          <option value='images/cabbage.svg'>cabbage.svg</option>
+          <option value='images/cactus.svg'>cactus.svg</option>
+          <option value='images/can.svg'>can.svg</option>
+          <option value='images/cat.svg'>cat.svg</option>
+          <option value='images/cleaver.svg'>cleaver.svg</option>
+          <option value='images/cockroach.svg'>cockroach.svg</option>
+          <option value='images/coffin.svg'>coffin.svg</option>
+          <option value='images/cookie.svg'>cookie.svg</option>
+          <option value='images/cup.svg'>cup.svg</option>
+          <option value='images/fish.svg'>fish.svg</option>
+          <option value='images/floppydisk.svg'>floppydisk.svg</option>
+          <option value='images/gyro.svg'>gyro.svg</option>
+          <option value='images/heart.svg'>heart.svg</option>
+          <option value='images/knife.svg'>knife.svg</option>
+          <option value='images/pill.svg'>pill.svg</option>
+          <option value='images/pillbottle.svg'>pillbottle.svg</option>
+          <option value='images/potatoes.svg'>potatoes.svg</option>
+          <option value='images/pumpkin.svg'>pumpkin.svg</option>
+          <option value='images/r2d2.svg'>r2d2.svg</option>
+          <option value='images/rainbow.svg'>rainbow.svg</option>
+          <option value='images/scissors.svg'>scissors.svg</option>
+          <option value='images/shoe.svg'>shoe.svg</option>
+          <option value='images/skateboard.svg'>skateboard.svg</option>
+          <option value='images/smartphone.svg'>smartphone.svg</option>
+          <option value='images/snowglobe.svg'>snowglobe.svg</option>
+          <option value='images/sofa.svg'>sofa.svg</option>
+          <option value='images/swissarmyknife.svg'>swissarmyknife.svg</option>
+          <option value='images/teabag.svg'>teabag.svg</option>
+          <option value='images/tentacle.svg'>tentacle.svg</option>
+          <option value='images/triangle.svg'>triangle.svg</option>
+          <option value='images/umbrella.svg'>umbrella.svg</option>
+          <option value='images/voodoodoll.svg'>voodoodoll.svg</option>
+          <option value='images/wallet.svg'>wallet.svg</option>
+        </select>
+        <select id='test-method' name='select method'>
+          <option disable selected>select method</option>
+          <option value='acquire'>acquire</option>
+          <option value='hinge'>hinge</option>
+          <option value='zoomIn'>zoomIn</option>
+        </select>
+      </div>
+      <div class='static-objects'>
+        <button id='static-button' type='button'>static object</button>
+        <img src='' width='150'>
+      </div>
+      <div class='screen'>
+        <button id='screen-shake' type='button'>screen shake!</button>
+      </div>
     </main>
     <script src='src/js/jquery-3.1.1.js'></script>
     <script src='src/js/animations.js'></script>

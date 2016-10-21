@@ -10,16 +10,22 @@
     - methods = ['acquire', 'hinge', 'zoomIn']
     %main
       #game-container
-      -# %input#test-content(type='text' placeholder='content')
-      %button#test-button(type='button')try it out
-      %button#random-button(type='button')random graphic
-      %button#screen-shake(type='button') screen shake!
-      %select#test-method(name='select method')
-        - (methods).each do |method|
-          %option(value='#{method}') #{method}
-      %select#test-file(name='select badge')
-        - (filenames).each do |file|
-          %option(value='images/#{file}') #{file}
+      .temp-objects
+        %button#temp-button(type='button')temp object
+        %button#random-button(type='button')random graphic
+        %select#test-file(name='select badge')
+          %option(selected disable)select badge
+          - (filenames).each do |file|
+            %option(value='images/#{file}') #{file}
+        %select#test-method(name='select method')
+          %option(selected disable)select method
+          - (methods).each do |method|
+            %option(value='#{method}') #{method}
+      .static-objects
+        %button#static-button(type='button')static object
+        %img(src='' width=150)
+      .screen
+        %button#screen-shake(type='button')screen shake!
 
 
 

@@ -113,10 +113,13 @@ var animations = {
 
 //DEBUG STUFF
 
-$('#test-button').click(function(){
+$('#temp-button').click(function(){
   animations.randomShake($(this));
   var content = $('#test-file').val();
   var method = $('#test-method').val();
+  method = method === 'select method' ? 'acquire' : method;
+  content = content === 'select badge' ? 'images/apple.svg' : content;
+  console.log(method);
   animations[method](content);
 });
 
@@ -124,8 +127,17 @@ $('#random-button').click(function(){
   animations.randomShake($(this));
   var index = Math.floor(Math.random() * animations.images.length);
   var method = $('#test-method').val();
+  method = method === 'select method' ? 'acquire' : method;
+  console.log(method);
   animations[method]('images/'+ animations.images[index]);
 });
+
+$('#static-button').click(function(){
+  animations.randomShake($(this));
+  var content = $('#test-file').val();
+  content = content === 'select badge' ? 'images/apple.svg' : content;
+  
+})
 
 $('#screen-shake').click(function(){
   animations.randomShake($(this));
