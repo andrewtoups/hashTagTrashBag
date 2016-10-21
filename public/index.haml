@@ -2,14 +2,49 @@
 %html
   %head
     %meta(charset='UTF-8')
-    %meta(name='viewport' content='width=device-width, intial-scale=1.0')
+    %meta(name='viewport' content='width=device-width, initial-scale=1.0')
     %title LOGIN
     %link(rel='stylesheet' href='dist/styles/main.min.css')
-    %link(href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet')
+    %link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
   %body
     %main
-      .login-container
-        .login
+      .login
+        %h1 #trashBag
+        .signin
+          %input(class='formField' type='text' required)
+          %span(class='highlight')
+          %span(class='line')
+          %label Username
+        .signin
+          %input(class='formField' type='password' required)
+          %span(class='highlight')
+          %span(class='line')
+          %label Password
+        .register
+          %input(class='formField' type='password' required)
+          %span(class='highlight')
+          %span(class='line')
+          %label Confirm Password
+        .register
+          %input(class='formField' type='text' required)
+          %span(class='highlight')
+          %span(class='line')
+          %label First Name
+        .register
+          %input(class='formField' type='text' required)
+          %span(class='highlight')
+          %span(class='line')
+          %label Last Name
+        .register
+          %input(class='formField' type='text' required)
+          %span(class='highlight')
+          %span(class='line')
+          %label Email
+
+        %button(id='btnLoginToRegister') Login
+        %p(id='loginToRegister') Not registered?
+        %p(id='textChange'onclick='register()') Register
+
 
     %script(src="src/js/jquery-3.1.1.js")
     %script(src="src/js/utils.js")

@@ -2,15 +2,54 @@
 <html>
   <head>
     <meta charset='UTF-8'>
-    <meta content='width=device-width, intial-scale=1.0' name='viewport'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <title>LOGIN</title>
     <link href='dist/styles/main.min.css' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
   </head>
   <body>
     <main>
-      <div class='login-container'>
-        <div class='login'></div>
+      <div class='login'>
+        <h1>#trashBag</h1>
+        <div class='signin'>
+          <input class='formField' required type='text'>
+          <span class='highlight'></span>
+          <span class='line'></span>
+          <label>Username</label>
+        </div>
+        <div class='signin'>
+          <input class='formField' required type='password'>
+          <span class='highlight'></span>
+          <span class='line'></span>
+          <label>Password</label>
+        </div>
+        <div class='register'>
+          <input class='formField' required type='password'>
+          <span class='highlight'></span>
+          <span class='line'></span>
+          <label>Confirm Password</label>
+        </div>
+        <div class='register'>
+          <input class='formField' required type='text'>
+          <span class='highlight'></span>
+          <span class='line'></span>
+          <label>First Name</label>
+        </div>
+        <div class='register'>
+          <input class='formField' required type='text'>
+          <span class='highlight'></span>
+          <span class='line'></span>
+          <label>Last Name</label>
+        </div>
+        <div class='register'>
+          <input class='formField' required type='text'>
+          <span class='highlight'></span>
+          <span class='line'></span>
+          <label>Email</label>
+        </div>
+        <button id='btnLoginToRegister'>Login</button>
+        <p id='loginToRegister'>Not registered?</p>
+        <p id='textChange' onclick='register()'>Register</p>
       </div>
     </main>
     <script src='src/js/jquery-3.1.1.js'></script>
