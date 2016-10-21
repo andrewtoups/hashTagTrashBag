@@ -20,22 +20,22 @@
           %span(class='highlight')
           %span(class='line')
           %label Password
-        .register
+        .signin.register
           %input(class='formField' type='password' required)
           %span(class='highlight')
           %span(class='line')
           %label Confirm Password
-        .register
+        .signin.register
           %input(class='formField' type='text' required)
           %span(class='highlight')
           %span(class='line')
           %label First Name
-        .register
+        .signin.register
           %input(class='formField' type='text' required)
           %span(class='highlight')
           %span(class='line')
           %label Last Name
-        .register
+        .signin.register
           %input(class='formField' type='text' required)
           %span(class='highlight')
           %span(class='line')
@@ -43,10 +43,10 @@
 
         %button(id='btnLoginToRegister') Login
         %p(id='loginToRegister') Not registered?
-        %p(id='textChange'onclick='register()') Register
+        %a(href='#' id='textChange') Register
 
 
     %script(src="src/js/jquery-3.1.1.js")
     %script(src="src/js/utils.js")
     %script(src="src/js/animations.js")
-    %script(src="src/js/main.js")
+    %script(src="src/js/login.js")
