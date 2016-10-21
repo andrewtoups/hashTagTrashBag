@@ -11,7 +11,7 @@ button{
 
   &:hover{
     background-color: #85b9a0;
-	  @include transition(all 0.4s ease-in-out);
+	  @include transition(all 0.5s ease-in-out);
   }
 }
 
@@ -37,4 +37,9 @@ h1{
 
 .register{
   display:none;
+}
+
+#textchange{
+	cursor:pointer;
+	color:#666;
 }
