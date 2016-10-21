@@ -1,8 +1,9 @@
 @import 'partials/bourbon/bourbon';
 @import 'partials/animate';
+@import 'partials/login';
 //
-.login {
-  @include linear-gradient(orange, pink);
-  width: 100px;
-  height: 100px
+
+body {
+  background: url('../../images/oldmoon.png');
+  font-family: 'Rubik', sans-serif;
 }
