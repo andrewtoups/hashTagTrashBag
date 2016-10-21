@@ -2,7 +2,11 @@
 @import 'partials/animate';
 
 //
-#game-container{
+body {
+  overflow: hidden;
+}
+
+#game-container {
   height: 500px;
   width: 800px;
   background: whitesmoke;
@@ -10,16 +14,15 @@
   position: relative;
 }
 
-#test-content, #test-button{
+button {
   font-size: 40px;
 }
 
-.linearRise {
-  @include animation-name(linearRise);
-}
-
-@keyframes linearRise {
-  100% {
-    @include transform(translateY(-30px));
+select {
+  height: 60px;
+  background: whitesmoke;
+  font-size: 40px;
+  option {
+    font-size: 40px;
   }
 }

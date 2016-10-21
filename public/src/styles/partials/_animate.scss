@@ -2927,6 +2927,43 @@
   animation-name: zoomOut;
 }
 
+@-webkit-keyframes zoomInOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(10, 10, 10);
+    transform: scale3d(10, 10, 10);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomInOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(10, 10, 10);
+    transform: scale3d(10, 10, 10);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.zoomInOut {
+  -webkit-animation-name: zoomInOut;
+  animation-name: zoomInOut;
+}
+
 @-webkit-keyframes zoomOutDown {
   40% {
     opacity: 1;
