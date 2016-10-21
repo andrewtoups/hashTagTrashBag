@@ -9,11 +9,13 @@ var animations = {
 
   ascend: function(content){
     var position = animations.getPosition();
-    console.log(position);
-    $('<span>').text(content).css({
+    $('<img>')
+    .attr('src', content)
+    .before('+')
+    .css({
       'position': 'absolute',
       'top': position.top + 'px',
-      'left': position.left + 'px'
+      'left': position.left + 'px',
     })
     .prependTo('#game-container')
     .toggleClass('animated bounceIn')
