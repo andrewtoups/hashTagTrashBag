@@ -13,3 +13,36 @@ body {
   background: url('../../images/oldmoon.png');
   font-family: 'Abel', sans-serif;
 }
+
+button {
+    background-color: #529c78;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+    margin: 20px auto;
+    padding: 10px;
+    width: 300px;
+
+    &:hover {
+        background-color: #85b9a0;
+        @include transition(all 0.5s ease-in-out);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+label {
+    color: #999999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    @include transition(0.2s ease all);
+}
