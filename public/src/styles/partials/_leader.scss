@@ -10,7 +10,6 @@
 
   #leaders {
     list-style: upper-roman;
-    counter-increment: leaderBoard;
     padding-left: 0;
     width: 80%;
     margin: 0 auto;
@@ -20,8 +19,11 @@
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       background: lightpink;
-      counter-reset: leaderBoard;
-      content: '0';
+      color: lightblue;
+      @include animation(rainbow 400ms linear infinite);
+      img {
+        @include animation(rainbow 400ms linear infinite);        
+      }
     }
 
     :nth-child(2n) + li {
@@ -36,22 +38,52 @@
 
     .lb-header {
       list-style: none;
+      font-size: 1.3em;
+      .leader-info {
+        width: 32%;
+        display: inline-block;
+      }
     }
 
     .leader {
-      ::before{
-
+      font-size: 1.6em;
+      .leader-info, {
+        display: inline-block;
+        width: 32%;
+        border: none;
+        vertical-align: middle;
+        margin: 0 0 4px;
+      }
+      img.leader-info {
+        height: 1.2em;
       }
     }
   }
 }
 
-.leader-info {
-  display: inline-block;
-  width: 32%;
-  height: 21px;
-  border: none;
-  &.badge {
-
+@include keyframes(rainbow){
+  0% {
+    color: red;
+    filter: hue-rotate(60deg);
+  }
+  20% {
+    color: blue;
+    filter: hue-rotate(120deg);
+  }
+  40% {
+    color: green;
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    color: yellow;
+    filter: hue-rotate(240deg);
+  }
+  80% {
+    color: orange;
+    filter: hue-rotate(300deg);
+  }
+  100% {
+    color: purple;
+    filter: hue-rotate(360deg);
   }
 }

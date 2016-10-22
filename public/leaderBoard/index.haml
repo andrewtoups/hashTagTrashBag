@@ -8,7 +8,7 @@
     %link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
   %body
     -# @TODO: grab array of top ten users with the types of properties:
-    - stat1 = {username: 'butthead', points: 5438, favBadge: 'apple'}
+    - stat1 = {username: 'butthead', points: 5438, favBadge: 'pillbottle'}
     - stat2 = {username: 'beavis', points: 4527, favBadge: 'voodoodoll'}
     - stat3 = {username: 'ren', points: 4259, favBadge: 'teabag'}
     - stat4 = {username: 'stimpy', points: 3935, favBadge: 'cactus'}
@@ -31,7 +31,7 @@
           %li.leader
             %span.leader-info #{stat[:username]}
             %span.leader-info #{stat[:points]}
-            %span.leader-info.badge(src='../images/badges/#{stat[:favBadge]}.svg')
+            %img.leader-info(src='../images/badges/#{stat[:favBadge]}.svg')
 
 
 
