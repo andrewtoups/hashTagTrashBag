@@ -3,5 +3,25 @@
   height:500px;
   background-color: #ffffff;
   border-radius: 10px;
+}
+
+.leftInventory, .rightInventory{
+  width:100px;
+  height:450px;
+
+  span{
+    display:inline-block;
+    width:48px;
+    height:48px;
+    background: url('/images/icons/question.svg')
+  }
+}
+
+.mainContainer *{
+  display: inline-block;
+}
+
+.mainContainer{
   margin: auto 0;
+  width: 750px
 }

@@ -8,8 +8,18 @@
     %link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
 %body
   %main
-    .leftInventory
-    .gameContainer
+    .mainContainer
+      - classesleft = ['apple', 'bowling', 'box', 'cabbage', 'cactus', 'can', 'cat', 'cleaver', 'cockroach', 'coffin',  'skateboard', 'smartphone', 'snowglobe', 'sofa', 'swissarmyknife', 'teabag', 'tentacle', 'wallet']
+      -classesright = ['cookie', 'cup', 'fish', 'floppydisk', 'gyro', 'heart', 'knife', 'pill', 'pillbottle', 'potatoes', 'pumpkin', 'r2d2', 'rainbow', 'scissors', 'shoe', 'triangle', 'umbrella', 'voodoodoll']
+
+      .leftInventory
+        - (classesleft).each do |badgeclass|
+          %span.badge(class='#{badgeclass}')
+      .gameContainer
+      .rightInventory
+        - (classesright).each do |badgeclass|
+          %span.badge(class='#{badgeclass}')
+
 
 
     %script(src="../../src/js/jquery-3.1.1.js")
