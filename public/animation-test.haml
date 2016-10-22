@@ -8,22 +8,29 @@
   %body
     - filenames = ['apple.svg', 'bowling.svg', 'box.svg', 'cabbage.svg', 'cactus.svg', 'can.svg', 'cat.svg', 'cleaver.svg', 'cockroach.svg', 'coffin.svg', 'cookie.svg', 'cup.svg', 'fish.svg', 'floppydisk.svg', 'gyro.svg', 'heart.svg', 'knife.svg', 'pill.svg', 'pillbottle.svg', 'potatoes.svg', 'pumpkin.svg', 'r2d2.svg', 'rainbow.svg', 'scissors.svg', 'shoe.svg', 'skateboard.svg', 'smartphone.svg', 'snowglobe.svg', 'sofa.svg', 'swissarmyknife.svg', 'teabag.svg', 'tentacle.svg', 'triangle.svg', 'umbrella.svg', 'voodoodoll.svg', 'wallet.svg']
     - methods = ['acquire', 'hinge', 'zoomIn']
+    - static = ['jello', 'bounce', 'shake', 'rubberBand', 'swing', 'tada', 'wobble']
     %main
       #game-container
-      .temp-objects
-        %button#temp-button(type='button')temp object
-        %button#random-button(type='button')random graphic
+      %img#static-img(width=200)
+      .item-menu
         %select#test-file(name='select badge')
           %option(selected disable)select badge
           - (filenames).each do |file|
             %option(value='images/#{file}') #{file}
+      .temp-objects
+        %button#temp-button(type='button')temp animation
+        %button#random-button(type='button')random temp animation
         %select#test-method(name='select method')
           %option(selected disable)select method
           - (methods).each do |method|
             %option(value='#{method}') #{method}
       .static-objects
-        %button#static-button(type='button')static object
-        %img(src='' width=150)
+        %button#static-button(type='button')static animation
+        %select#static-method(name='select method')
+          %option(selected disable)select method
+          - (static).each do |method|
+            %option(value='#{method}') #{method}
+
       .screen
         %button#screen-shake(type='button')screen shake!
 

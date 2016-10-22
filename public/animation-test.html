@@ -9,9 +9,8 @@
   <body>
     <main>
       <div id='game-container'></div>
-      <div class='temp-objects'>
-        <button id='temp-button' type='button'>temp object</button>
-        <button id='random-button' type='button'>random graphic</button>
+      <img id='static-img' width='200'>
+      <div class='item-menu'>
         <select id='test-file' name='select badge'>
           <option disable selected>select badge</option>
           <option value='images/apple.svg'>apple.svg</option>
@@ -51,6 +50,10 @@
           <option value='images/voodoodoll.svg'>voodoodoll.svg</option>
           <option value='images/wallet.svg'>wallet.svg</option>
         </select>
+      </div>
+      <div class='temp-objects'>
+        <button id='temp-button' type='button'>temp animation</button>
+        <button id='random-button' type='button'>random temp animation</button>
         <select id='test-method' name='select method'>
           <option disable selected>select method</option>
           <option value='acquire'>acquire</option>
@@ -59,8 +62,17 @@
         </select>
       </div>
       <div class='static-objects'>
-        <button id='static-button' type='button'>static object</button>
-        <img src='' width='150'>
+        <button id='static-button' type='button'>static animation</button>
+        <select id='static-method' name='select method'>
+          <option disable selected>select method</option>
+          <option value='jello'>jello</option>
+          <option value='bounce'>bounce</option>
+          <option value='shake'>shake</option>
+          <option value='rubberBand'>rubberBand</option>
+          <option value='swing'>swing</option>
+          <option value='tada'>tada</option>
+          <option value='wobble'>wobble</option>
+        </select>
       </div>
       <div class='screen'>
         <button id='screen-shake' type='button'>screen shake!</button>
