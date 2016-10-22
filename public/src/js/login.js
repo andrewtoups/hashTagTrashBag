@@ -1,4 +1,6 @@
-$('#textChange').click(function() {
+'use strict';
+
+$('#textChange').click(function () {
 
     var status = $('#btnLoginToRegister').text();
 
@@ -14,3 +16,9 @@ $('#textChange').click(function() {
         $('.register').slideUp();
     }
 });
+//# sourceMappingURL=login.js.map
+//# sourceMappingURL=login.js.map
+//# sourceMappingURL=login.js.map
+//# sourceMappingURL=login.js.map
+//# sourceMappingURL=login.js.map
+//# sourceMappingURL=login.js.map
