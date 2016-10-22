@@ -3,7 +3,7 @@
 
 //
 body {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 #game-container {
@@ -12,6 +12,10 @@ body {
   background: whitesmoke;
   margin: 50px auto;
   position: relative;
+}
+
+div {
+  margin: 30px auto;
 }
 
 button {
