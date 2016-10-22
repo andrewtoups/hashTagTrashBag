@@ -6,6 +6,32 @@
     %title Login
     %link(rel='stylesheet' href='../dist/styles/main.min.css')
     %link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
+  %body
+    -# @TODO: grab array of top ten users with the types of properties:
+    - stat1 = {username: 'butthead', points: 5438, favBadge: 'apple'}
+    - stat2 = {username: 'beavis', points: 4527, favBadge: 'voodoodoll'}
+    - stat3 = {username: 'ren', points: 4259, favBadge: 'teabag'}
+    - stat4 = {username: 'stimpy', points: 3935, favBadge: 'cactus'}
+    - stat5 = {username: 'roast beef', points: 3451, favBadge: 'can'}
+    - stat6 = {username: 'ray', points: 3125, favBadge: 'skateboard'}
+    - stat7 = {username: 'bart', points: 2724, favBadge: 'triangle'}
+    - stat8 = {username: 'milhouse', points: 2452, favBadge: 'fish'}
+    - stat9 = {username: 'harry', points: 2134, favBadge: 'swissarmyknife'}
+    - stat10 = {username: 'heather', points: 1688, favBadge: 'cabbage'}
+    - topTen = [stat1, stat2, stat3, stat4, stat5, stat6, stat7, stat8, stat9, stat10]
+    #leaderBoard
+      %h1 TRASH-BLASTER
+      %h1 MATH-MASTERS
+      %ol#leaders
+        .lb-header
+          %span.leader-info TRASH-MASTER
+          %span.leader-info TRASH-STASH
+          %span.leader-info TRASH-STYLE
+        - (topTen).each do |stat|
+          %li.leader
+            %span.leader-info #{stat[:username]}
+            %span.leader-info #{stat[:points]}
+            %img.leader-info.badge(src='../images/badges/#{stat[:favBadge]}.svg')
 
 
 
