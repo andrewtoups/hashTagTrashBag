@@ -15,7 +15,8 @@
       .leftInventory
         - (classesleft).each do |badgeclass|
           %span.badge(class='#{badgeclass}')
-      .gameContainer
+      #game-container
+        %h1 #trashBag
       .rightInventory
         - (classesright).each do |badgeclass|
           %span.badge(class='#{badgeclass}')

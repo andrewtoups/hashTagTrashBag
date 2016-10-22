@@ -5,6 +5,9 @@
 @import 'partials/user';
 @import 'partials/leader';
 //
+*{
+  box-sizing: border-box;
+}
 
 a{
   text-decoration: none;
