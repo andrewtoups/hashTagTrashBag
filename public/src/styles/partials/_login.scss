@@ -67,13 +67,10 @@
 
 .login {
     background-color: #ffffff;
-    border-radius: 10px;
-    border-top: 2px solid #666666;
-    border-bottom: 2px solid #529c78;
-    margin: auto auto 100px;
+    @include custom-border();
+    margin: 50px auto;
     padding: 10px 0;
     position: relative;
-    top: 50px;
     width: 500px;
     text-align: center;
 }
@@ -89,14 +86,4 @@
     position: relative;
     margin-bottom: 35px;
     margin-left: 40px;
-}
-@keyframes inputHighlighter {
-    from {
-        background: #999999;
-    }
-
-    to {
-        width: 0;
-        background: transparent;
-    }
 }

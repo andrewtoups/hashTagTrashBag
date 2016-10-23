@@ -3375,3 +3375,45 @@
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+
+@include keyframes(rainbow){
+  0% {
+    color: red;
+    filter: hue-rotate(60deg);
+  }
+  20% {
+    color: blue;
+    filter: hue-rotate(120deg);
+  }
+  40% {
+    color: green;
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    color: yellow;
+    filter: hue-rotate(240deg);
+  }
+  80% {
+    color: orange;
+    filter: hue-rotate(300deg);
+  }
+  100% {
+    color: purple;
+    filter: hue-rotate(360deg);
+  }
+}
+
+.rainbow {
+  @include animation(rainbow 400ms linear infinite);
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #999999;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}

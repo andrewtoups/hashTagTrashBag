@@ -1,8 +1,6 @@
 #leaderBoard {
   background: white;
-  border-radius: 10px;
-  border-top: 2px solid #666666;
-  border-bottom: 2px solid #529c78;
+  @include custom-border();
   margin: 50px auto;
   padding: 10px 0;
   width: 500px;
@@ -12,17 +10,15 @@
     list-style: upper-roman;
     padding-left: 0;
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
 
     >:nth-child(2) {
-      border-top: 2px solid #529c78;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
+      @include custom-border-part('top');
       background: lightpink;
       color: lightblue;
       @include animation(rainbow 400ms linear infinite);
       img {
-        @include animation(rainbow 400ms linear infinite);        
+        @include animation(rainbow 400ms linear infinite);
       }
     }
 
@@ -31,9 +27,7 @@
     }
 
     >:last-child {
-      border-bottom: 2px solid #666666;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
+      @include custom-border-part('bottom');
     }
 
     .lb-header {
@@ -58,32 +52,5 @@
         height: 1.2em;
       }
     }
-  }
-}
-
-@include keyframes(rainbow){
-  0% {
-    color: red;
-    filter: hue-rotate(60deg);
-  }
-  20% {
-    color: blue;
-    filter: hue-rotate(120deg);
-  }
-  40% {
-    color: green;
-    filter: hue-rotate(180deg);
-  }
-  60% {
-    color: yellow;
-    filter: hue-rotate(240deg);
-  }
-  80% {
-    color: orange;
-    filter: hue-rotate(300deg);
-  }
-  100% {
-    color: purple;
-    filter: hue-rotate(360deg);
   }
 }

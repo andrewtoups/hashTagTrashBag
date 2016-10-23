@@ -10,18 +10,29 @@
   %main
     .mainContainer
       - classesleft = ['apple', 'bowling', 'box', 'cabbage', 'cactus', 'can', 'cat', 'cleaver', 'cockroach', 'coffin',  'skateboard', 'smartphone', 'snowglobe', 'sofa', 'swissarmyknife', 'teabag', 'tentacle', 'wallet']
-      -classesright = ['cookie', 'cup', 'fish', 'floppydisk', 'gyro', 'heart', 'knife', 'pill', 'pillbottle', 'potatoes', 'pumpkin', 'r2d2', 'rainbow', 'scissors', 'shoe', 'triangle', 'umbrella', 'voodoodoll']
+      - classesright = ['cookie', 'cup', 'fish', 'floppydisk', 'gyro', 'heart', 'knife', 'pill', 'pillbottle', 'potatoes', 'pumpkin', 'r2d2', 'rainbow', 'scissors', 'shoe', 'triangle', 'umbrella', 'voodoodoll']
 
       .leftInventory
         - (classesleft).each do |badgeclass|
           %span.badge(class='#{badgeclass}')
+
+
       #game-container
         %h1 #trashBag
-        #actualGame
-          %h3 Timer
-          %h3 Score
+        #header
+          %h3.timer Timer
+          %h3.score Score
         #message
           %p I am the message that pops up when you get a reward. What happens when I am long?
+        #equation
+          %span#L
+          %span#operator
+          %span#R
+        #controls
+          %button#wrong(type='button')
+          %button#right(type='button')
+
+
       .rightInventory
         - (classesright).each do |badgeclass|
           %span.badge(class='#{badgeclass}')

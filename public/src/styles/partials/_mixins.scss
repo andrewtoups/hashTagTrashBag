@@ -1,0 +1,21 @@
+@mixin custom-border {
+
+  border-radius: 10px;
+  border-top: 2px solid #666666;
+  border-bottom: 2px solid #529c78;
+
+}
+
+@mixin custom-border-part($side) {
+
+  @if $side == 'top' {
+    border-#{$side}: 2px solid #666666;
+    border-#{$side}-left-radius: 10px;
+    border-#{$side}-right-radius: 10px;
+  } @else if $side == 'bottom' {
+    border-#{$side}: 2px solid #529c78;
+    border-#{$side}-left-radius: 10px;
+    border-#{$side}-right-radius: 10px;
+  }
+
+}
