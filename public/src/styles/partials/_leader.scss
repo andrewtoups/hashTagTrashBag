@@ -7,20 +7,15 @@
   text-align: center;
 
   #leaders {
-    list-style: upper-roman;
     padding-left: 0;
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
 
     >:nth-child(2) {
       @include custom-border-part('top');
-      background: lightpink;
-      color: lightblue;
-      @include animation(rainbow 400ms linear infinite);
-      img {
-        @include animation(rainbow 400ms linear infinite);
-      }
+      background: #529c78;
     }
+
 
     :nth-child(2n) + li {
       background: whitesmoke;
@@ -40,6 +35,7 @@
     }
 
     .leader {
+      list-style: none;
       font-size: 1.6em;
       .leader-info, {
         display: inline-block;
