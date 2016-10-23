@@ -5,4 +5,4 @@ node_modules
 .DS-Store
 Gruntfile.js
 package.json
-public/src/main.js.map
+public/src/js/main.js.map
