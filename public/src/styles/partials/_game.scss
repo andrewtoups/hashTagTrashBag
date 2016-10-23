@@ -1,3 +1,7 @@
+#game-container * {
+  z-index: 0;
+}
+
 #game-container {
     width: 500px;
     height: 600px;
@@ -5,15 +9,39 @@
     background-position: top;
     background-size: 150%;
     @include custom-border();
-    margin-top: 10px;
+    margin-top: 40px;
     position: relative;
-    opacity: 0.8;
+    // opacity: 0.6;
+
+    #header {
+      h1 {
+        margin: 10px auto;
+        font-size: 50px;
+      }
+
+      h3 {
+        margin: 0;
+        position: absolute;
+        top: 75px;
+        height: 75px;
+        width: 125px;
+        @include custom-border();
+        background: whitesmoke;
+        opacity: 0.8;
+        &#timer {
+          left: 25px;
+        }
+        &#score {
+          right: 25px;
+        }
+      }
+    }
 
     #equation {
       span {
         position: absolute;
-        bottom: 200px;
-        height: 150px;
+        top: 175px;
+        height: 100px;
         width: 100px;
         background: whitesmoke;
         opacity: .7;
@@ -25,7 +53,7 @@
         &#R {right: 80px;}
         &#operator {
           left: 225px;
-          bottom: 250px;
+          top: 200px;
           height: 50px;
           width: 50px;
           img {
@@ -34,19 +62,19 @@
           }
         }
         &#solution {
-          bottom: 20px;
-          left: 240px;
+          top: 375px;
+          left: 200px;
         }
 
         img {
           width: 70px;
-          margin: 40px auto;
+          margin: 10px auto;
         }
       }
       img#equals {
         position: absolute;
-        bottom: 70px;
-        left: 160px;
+        top: 300px;
+        left: 225px;
         width: 50px;
         @include animation(rainbow 500ms infinite);
       }
@@ -55,26 +83,23 @@
 
     #controls {
       button {
+        margin: 0;
         position: absolute;
-        bottom: 30px;
-        height: 80px;
-        width: 80px;
-        border-radius: 40px;
+        top: 375px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
         transition: none;
 
         &#wrong {
           left: 50px;
-          background: url('/images/icons/error.svg');
-          // &:active {
-          //   filter: hue-rotate(155deg);
-          // }
+          background: url('/images/icons/error.svg') center;
+          background-size: 125%;
         }
         &#right {
           right: 50px;
-          background: url('/images/icons/success.svg');
-          // &:active {
-          //   filter: hue-rotate(-155deg);
-          // }
+          background: url('/images/icons/success.svg') center;
+          background-size: 125%;
         }
         &:active {
           @include animation(rainbow 50ms infinite);
@@ -88,11 +113,15 @@
 
 
     #message{
-      width:400px;
+      position: absolute;
+      margin: 0;
+      bottom: 25px;
+      left: 25px;
+      width:450px;
       height:75px;
-      border-radius: 20px;
-      border: 2px solid #529c78;
+      @include custom-border();
       background: whitesmoke;
+      opacity: 0.8;
     }
 }
 
@@ -109,10 +138,21 @@
         border-radius: 5px;
         width: 56px;
         margin: 0;
-        padding: 5px;
         height: 60px;
-        background: url('/images/icons/question.svg');
-        opacity: 0.5;
+        position: relative;
+        img {
+          opacity: 0.5;
+        }
+        .badgeCount {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 20px;
+          width: 20px;
+          border-radius: 10px;
+          background: #25ae88;
+          color: whitesmoke;
+        }
     }
 }
 
