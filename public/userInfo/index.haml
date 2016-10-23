@@ -3,10 +3,40 @@
   %head
     %meta(charset='UTF-8')
     %meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    %title Login
+    %title User Info
     %link(rel='stylesheet' href='../dist/styles/main.min.css')
     %link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
   %body
+    .userPage
+      %h1 #trashBag
+      %h2 Your Profile
+      %ol(id='user')
+        %li(class='odd') Username
+        %li First Name Last Name
+        %li(class='odd') Email
+        %li Total Badge Count
+        %li(class='odd') Game Score
+      %h2 Your Badges
+      %ul(id='badgesEarned')
+        %h2 Tier One
+        - tierOne = ['apple', 'cabbage', 'cockroach', 'shoe', 'teabag', 'triangle']
+        %li Blahblahblah
+        %h2 Tier Two
+        - tierTwo = ['bowling', 'box', 'can', 'gyro', 'scissors', 'umbrella']
+        %li Blah sdfjk
+        %h2 Tier three
+        - tierThree = ['cactus', 'cleaver', 'cookie', 'potatoes', 'skateboard', 'tentacle']
+        %li Blah sdfjk
+        %h2 Tier Four
+        - tierFour = ['cat', 'floppydisk', 'pills', 'snowglobe', 'swissarmyknife', 'wallet']
+        %li Blah sdfjk
+        %h2 Tier Five
+        - tierFive = ['coffin', 'fish', 'heart', 'pumpkin', 'sofa', 'voodoodoll']
+        %li Blah sdfjk
+        %h2 Tier Six
+        - tierSix = ['cup', 'knife', 'pillbottle', 'r2d2', 'rainbow', 'smartphone']
+        %li Blah sdfjk
+
 
 
 
