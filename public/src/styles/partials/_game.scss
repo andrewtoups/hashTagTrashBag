@@ -28,10 +28,19 @@
           bottom: 250px;
           height: 50px;
           width: 50px;
+          img {
+            width: 30px;
+            margin: 5px auto;
+          }
         }
         &#solution {
           bottom: 20px;
           left: 240px;
+        }
+
+        img {
+          width: 70px;
+          margin: 40px auto;
         }
       }
       img#equals {
