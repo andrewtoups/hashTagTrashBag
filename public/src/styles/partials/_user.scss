@@ -36,8 +36,10 @@
 
   li{
     @include custom-border();
+    height:79px;
+    background: url('/images/icons/question.svg');
   }
    h2{
-     font-size: 12px;
+     font-size: 14px;
    }
 }
