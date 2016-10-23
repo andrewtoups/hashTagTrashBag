@@ -20,7 +20,7 @@ var utils = {
     ['mobile-phone-with-nine-keys.svg', 'nine-1.svg', 'nine-black-tiles.svg', 'nine-oclock-on-circular-clock.svg', 'nine-persons-symbol.svg', 'nine-persons.svg', 'nine-small-circles.svg', 'nine.svg', 'number-9-key-on-keyboard.svg', 'number-nine-in-a-circle.svg', 'number-nine.svg', 'telephone-auricular-with-nine-circular-buttons.svg',  ],
   ],
 
-  operators: ['plus.svg', 'minus.svg', 'dividedby.svg', 'times.svg', 'equals.svg'],
+  operators: ['plus.svg', 'minus.svg', 'dividedby.svg', 'times.svg'],
 
   loader: {
     isLoading: false,

@@ -10,18 +10,19 @@
   %main
     .mainContainer
       - classesleft = ['apple', 'bowling', 'box', 'cabbage', 'cactus', 'can', 'cat', 'cleaver', 'cockroach', 'coffin',  'skateboard', 'smartphone', 'snowglobe', 'sofa', 'swissarmyknife', 'teabag', 'tentacle', 'wallet']
-      - classesright = ['cookie', 'cup', 'fish', 'floppydisk', 'gyro', 'heart', 'knife', 'pill', 'pillbottle', 'potatoes', 'pumpkin', 'r2d2', 'rainbow', 'scissors', 'shoe', 'triangle', 'umbrella', 'voodoodoll']
+      - classesright = ['cookie', 'cup', 'fish', 'floppydisk', 'gyro', 'heart', 'knife', 'pills', 'pillbottle', 'potatoes', 'pumpkin', 'r2d2', 'rainbow', 'scissors', 'shoe', 'triangle', 'umbrella', 'voodoodoll']
 
       .leftInventory
         - (classesleft).each do |badgeclass|
           %span.badge(class='#{badgeclass}')
+            %img(src='/images/icons/question.svg')
 
 
       #game-container
-        %h1 #trashBag
         #header
-          %h3.timer Timer
-          %h3.score Score
+          %h1 #trashBag
+          %h3#timer Timer
+          %h3#score Score
         #message
           %p.hyper I am the message that pops up when you get a reward. What happens when I am long?
         #equation
@@ -38,10 +39,11 @@
       .rightInventory
         - (classesright).each do |badgeclass|
           %span.badge(class='#{badgeclass}')
-
+            %img(src='/images/icons/question.svg')
 
 
     %script(src="../../src/js/jquery-3.1.1.js")
     %script(src="../../src/js/utils.js")
     %script(src="../../src/js/animations.js")
     %script(src="../../src/js/game.js")
+    %script(src="../../src/js/badges.js")

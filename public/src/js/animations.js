@@ -2,7 +2,7 @@ const displayArea = '#game-container';
 
 var animations = {
 
-  images: ['apple.svg', 'bowling.svg', 'box.svg', 'cabbage.svg', 'cactus.svg', 'can.svg', 'cat.svg', 'cleaver.svg', 'cockroach.svg', 'coffin.svg', 'cookie.svg', 'cup.svg', 'fish.svg', 'floppydisk.svg', 'gyro.svg', 'heart.svg', 'knife.svg', 'pill.svg', 'pillbottle.svg', 'potatoes.svg', 'pumpkin.svg', 'r2d2.svg', 'rainbow.svg', 'scissors.svg', 'shoe.svg', 'skateboard.svg', 'smartphone.svg', 'snowglobe.svg', 'sofa.svg', 'swissarmyknife.svg', 'teabag.svg', 'tentacle.svg', 'triangle.svg', 'umbrella.svg', 'voodoodoll.svg', 'wallet.svg'],
+  images: ['apple.svg', 'bowling.svg', 'box.svg', 'cabbage.svg', 'cactus.svg', 'can.svg', 'cat.svg', 'cleaver.svg', 'cockroach.svg', 'coffin.svg', 'cookie.svg', 'cup.svg', 'fish.svg', 'floppydisk.svg', 'gyro.svg', 'heart.svg', 'knife.svg', 'pills.svg', 'pillbottle.svg', 'potatoes.svg', 'pumpkin.svg', 'r2d2.svg', 'rainbow.svg', 'scissors.svg', 'shoe.svg', 'skateboard.svg', 'smartphone.svg', 'snowglobe.svg', 'sofa.svg', 'swissarmyknife.svg', 'teabag.svg', 'tentacle.svg', 'triangle.svg', 'umbrella.svg', 'voodoodoll.svg', 'wallet.svg'],
 
   methods: ['acquire', 'hinge', 'zoomIn'],
 
