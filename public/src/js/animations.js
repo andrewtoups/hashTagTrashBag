@@ -42,7 +42,10 @@ var animations = {
   },
 
   cancel: function(elem){
-    $(elem).removeClass('animated');
+    var clone = $(elem).clone(true);
+    elem.before(clone);
+    $(elem).remove();
+    return clone;
   },
 
   acquire: function(content){
@@ -51,7 +54,7 @@ var animations = {
     var plus = elem
       .clone()
       .attr({
-        'src': 'images/badges/plus.svg',
+        'src': 'images/operators/plus.svg',
         'height': '15px'
       })
       .css({
@@ -91,7 +94,7 @@ var animations = {
 
   randomShake: function(elem){
     var style = animations.getStyle('shake');
-    animations.cancel(elem);
+    elem = animations.cancel(elem);
     $(elem)
     .toggleClass('animated ' +style)
     .on('animationend', function(){
@@ -100,8 +103,15 @@ var animations = {
   },
 
   static: function(elem, style){
-    console.log("in");
-    animations.cancel(elem);
+    if ($(elem).attr('class') === 'animated ' +style){
+      elem = animations.cancel(elem);
+      $(elem)
+      .toggleClass('animated ' +style)
+      .on('animationend', function(){
+        $(this).removeClass('animated ' +style);
+      });
+      console.log('in if');
+    }
     $(elem)
     .toggleClass('animated ' +style)
     .on('animationend', function(){

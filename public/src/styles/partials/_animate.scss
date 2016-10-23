@@ -13,6 +13,9 @@
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  &:active {
+    @include animation(rainbow 50ms linear infinite);
+  }
 }
 
 .animated.infinite {
@@ -3379,31 +3382,31 @@
 @include keyframes(rainbow){
   0% {
     color: red;
-    filter: hue-rotate(60deg);
+    filter: hue-rotate(60deg) saturate(200%);
   }
   20% {
     color: blue;
-    filter: hue-rotate(120deg);
+    filter: hue-rotate(120deg) saturate(200%);
   }
   40% {
     color: green;
-    filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg) saturate(200%);
   }
   60% {
     color: yellow;
-    filter: hue-rotate(240deg);
+    filter: hue-rotate(240deg) saturate(200%);
   }
   80% {
     color: orange;
-    filter: hue-rotate(300deg);
+    filter: hue-rotate(300deg) saturate(200%);
   }
   100% {
     color: purple;
-    filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg) saturate(200%);
   }
 }
 
-.rainbow {
+.hyper {
   @include animation(rainbow 400ms linear infinite);
 }
 

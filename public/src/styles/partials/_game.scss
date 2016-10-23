@@ -12,7 +12,7 @@
     #equation {
       span {
         position: absolute;
-        bottom: 150px;
+        bottom: 200px;
         height: 150px;
         width: 100px;
         background: whitesmoke;
@@ -25,10 +25,21 @@
         &#R {right: 80px;}
         &#operator {
           left: 225px;
-          bottom: 200px;
+          bottom: 250px;
           height: 50px;
           width: 50px;
         }
+        &#solution {
+          bottom: 20px;
+          left: 240px;
+        }
+      }
+      img#equals {
+        position: absolute;
+        bottom: 70px;
+        left: 160px;
+        width: 50px;
+        @include animation(rainbow 500ms infinite);
       }
 
     }
@@ -43,18 +54,21 @@
         transition: none;
 
         &#wrong {
-          left: 125px;
+          left: 50px;
           background: url('/images/icons/error.svg');
-          &:active {
-            filter: hue-rotate(155deg);
-          }
+          // &:active {
+          //   filter: hue-rotate(155deg);
+          // }
         }
         &#right {
-          right: 125px;
+          right: 50px;
           background: url('/images/icons/success.svg');
-          &:active {
-            filter: hue-rotate(-155deg);
-          }
+          // &:active {
+          //   filter: hue-rotate(-155deg);
+          // }
+        }
+        &:active {
+          @include animation(rainbow 50ms infinite);
         }
 
         &:focus {
@@ -89,6 +103,7 @@
         padding: 5px;
         height: 60px;
         background: url('/images/icons/question.svg');
+        opacity: 0.5;
     }
 }
 
