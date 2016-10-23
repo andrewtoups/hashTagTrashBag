@@ -11,12 +11,12 @@ var animations = {
   shakeStyles: ['rubberBand', 'jello', 'tada', 'shake', 'wobble'],
 
   getPosition: function(){
+    var width = $(displayArea).outerWidth()/2;
+    var height = $(displayArea).outerHeight()/2;
     var position = {
-      left: Math.floor(Math.random()* ($(displayArea).outerWidth() - 20)),
-      top: Math.floor(Math.random()* ($(displayArea).outerHeight() - 20)),
+      left: Math.floor(Math.random()*(width) + width/2),
+      top: Math.floor(Math.random()*(height) + height/2),
     }
-    // position.left = position.left - position.left/2
-    // position.top = position.top - position.top/2
     return position;
   },
 
@@ -25,20 +25,36 @@ var animations = {
     return style;
   },
 
-  createElem: function(content){
-    var position = animations.getPosition();
+  createImg: function(content, position){
     var elem = $('<img>')
     .attr({
       'src': content,
-      'width': '50px',
+      'width': '100px',
     })
     .css({
       'position': 'absolute',
       'top': position.top + 'px',
       'left': position.left + 'px',
+      'filter': 'saturation(150%)'
     })
     .prependTo(displayArea);
     return elem;
+  },
+
+  createElem: function(content, position){
+    position = position || animations.getPosition();
+    if (content.includes('.svg')){
+      return animations.createImg(content, position);
+    } else {
+      var elem = $('<div>')
+      .text(content)
+      .css({
+        'position': 'absolute',
+        'top': position.top + 'px',
+        'left': position.left + 'px',
+      })
+      return elem;
+    }
   },
 
   cancel: function(elem){
@@ -48,24 +64,46 @@ var animations = {
     return clone;
   },
 
-  acquire: function(content){
-    var style = animations.getStyle('entry');
-    var elem = animations.createElem(content);
-    var plus = elem
-      .clone()
-      .attr({
-        'src': 'images/operators/plus.svg',
-        'height': '15px'
-      })
+  addPlus: function(elem){
+    var plus = $('<img>')
+      .append($(elem)
+        .contents()
+        .clone()
+      )
       .css({
         'left': '-=35px',
-        'top': '+=10px'
+        'top': '+=10px',
       })
-      .add(elem);
+      .attr({
+        'src': '../images/operators/plus.svg',
+        'height': '15px'
+      })
+        .add(elem);
+    // var plus = elem
+    //   .clone()
+    //   .attr({
+    //     'src': '../images/operators/plus.svg',
+    //     'height': '15px'
+    //   })
+    //   .css({
+    //     'left': '-=35px',
+    //     'top': '+=10px',
+    //   })
+    //   .add(elem);
+    return plus;
+  },
+
+  acquire: function(content, position){
+    var style = animations.getStyle('entry');
+    var elem = animations.createElem(content, position); // position random if undefined
+    var plus = animations.addPlus(elem);
     plus.prependTo(displayArea);
 
     $(plus)
     .toggleClass('animated ' +style)
+    .css({
+      'z-index': '2'
+    })
     .on('animationend', function(){
       $(this).toggleClass(style +' fadeOutUpBig')
         .on('animationend', function(){
