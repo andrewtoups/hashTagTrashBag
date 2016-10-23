@@ -91,7 +91,6 @@ var animations = {
 
   randomShake: function(elem){
     var style = animations.getStyle('shake');
-    console.log(style);
     animations.cancel(elem);
     $(elem)
     .toggleClass('animated ' +style)
@@ -100,8 +99,14 @@ var animations = {
     });
   },
 
-  jello: function(){
-
+  static: function(elem, style){
+    console.log("in");
+    animations.cancel(elem);
+    $(elem)
+    .toggleClass('animated ' +style)
+    .on('animationend', function(){
+      $(this).removeClass('animated ' +style);
+    });
   }
 
 
@@ -113,12 +118,16 @@ var animations = {
 
 //DEBUG STUFF
 
+var index = Math.floor(Math.random() * animations.images.length);
+var randomImg = 'images/' + animations.images[index];
+$('#static-img').attr('src', randomImg);
+
 $('#temp-button').click(function(){
   animations.randomShake($(this));
   var content = $('#test-file').val();
   var method = $('#test-method').val();
   method = method === 'select method' ? 'acquire' : method;
-  content = content === 'select badge' ? 'images/apple.svg' : content;
+  content = content === 'select badge' ? randomImg : content;
   console.log(method);
   animations[method](content);
 });
@@ -126,18 +135,26 @@ $('#temp-button').click(function(){
 $('#random-button').click(function(){
   animations.randomShake($(this));
   var index = Math.floor(Math.random() * animations.images.length);
+  var randomImg = 'images/' + animations.images[index];
+  $('#static-img').attr('src', randomImg);
   var method = $('#test-method').val();
   method = method === 'select method' ? 'acquire' : method;
   console.log(method);
-  animations[method]('images/'+ animations.images[index]);
+  animations[method](randomImg);
+});
+
+
+$('#test-file').change(function(){
+  var content = $('#test-file').val();
+  $('#static-img').attr('src', content);
 });
 
 $('#static-button').click(function(){
   animations.randomShake($(this));
-  var content = $('#test-file').val();
-  content = content === 'select badge' ? 'images/apple.svg' : content;
-  
-})
+  var method = $('#static-method').val();
+  method = method === 'select method' ? 'jello' : method;
+  animations.static($('#static-img'), method);
+});
 
 $('#screen-shake').click(function(){
   animations.randomShake($(this));
