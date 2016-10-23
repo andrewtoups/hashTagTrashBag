@@ -51,7 +51,7 @@ var animations = {
     var plus = elem
       .clone()
       .attr({
-        'src': 'images/plus.svg',
+        'src': 'images/badges/plus.svg',
         'height': '15px'
       })
       .css({
@@ -119,7 +119,7 @@ var animations = {
 //DEBUG STUFF
 
 var index = Math.floor(Math.random() * animations.images.length);
-var randomImg = 'images/' + animations.images[index];
+var randomImg = 'images/badges/' + animations.images[index];
 $('#static-img').attr('src', randomImg);
 
 $('#temp-button').click(function(){
@@ -135,7 +135,7 @@ $('#temp-button').click(function(){
 $('#random-button').click(function(){
   animations.randomShake($(this));
   var index = Math.floor(Math.random() * animations.images.length);
-  var randomImg = 'images/' + animations.images[index];
+  var randomImg = 'images/badges/' + animations.images[index];
   $('#static-img').attr('src', randomImg);
   var method = $('#test-method').val();
   method = method === 'select method' ? 'acquire' : method;

@@ -9,48 +9,51 @@
   <body>
     <main>
       <div id='game-container'></div>
-      <div class='temp-objects'>
-        <button id='temp-button' type='button'>temp object</button>
-        <button id='random-button' type='button'>random graphic</button>
+      <img id='static-img' width='200'>
+      <div class='item-menu'>
         <select id='test-file' name='select badge'>
           <option disable selected>select badge</option>
-          <option value='images/apple.svg'>apple.svg</option>
-          <option value='images/bowling.svg'>bowling.svg</option>
-          <option value='images/box.svg'>box.svg</option>
-          <option value='images/cabbage.svg'>cabbage.svg</option>
-          <option value='images/cactus.svg'>cactus.svg</option>
-          <option value='images/can.svg'>can.svg</option>
-          <option value='images/cat.svg'>cat.svg</option>
-          <option value='images/cleaver.svg'>cleaver.svg</option>
-          <option value='images/cockroach.svg'>cockroach.svg</option>
-          <option value='images/coffin.svg'>coffin.svg</option>
-          <option value='images/cookie.svg'>cookie.svg</option>
-          <option value='images/cup.svg'>cup.svg</option>
-          <option value='images/fish.svg'>fish.svg</option>
-          <option value='images/floppydisk.svg'>floppydisk.svg</option>
-          <option value='images/gyro.svg'>gyro.svg</option>
-          <option value='images/heart.svg'>heart.svg</option>
-          <option value='images/knife.svg'>knife.svg</option>
-          <option value='images/pill.svg'>pill.svg</option>
-          <option value='images/pillbottle.svg'>pillbottle.svg</option>
-          <option value='images/potatoes.svg'>potatoes.svg</option>
-          <option value='images/pumpkin.svg'>pumpkin.svg</option>
-          <option value='images/r2d2.svg'>r2d2.svg</option>
-          <option value='images/rainbow.svg'>rainbow.svg</option>
-          <option value='images/scissors.svg'>scissors.svg</option>
-          <option value='images/shoe.svg'>shoe.svg</option>
-          <option value='images/skateboard.svg'>skateboard.svg</option>
-          <option value='images/smartphone.svg'>smartphone.svg</option>
-          <option value='images/snowglobe.svg'>snowglobe.svg</option>
-          <option value='images/sofa.svg'>sofa.svg</option>
-          <option value='images/swissarmyknife.svg'>swissarmyknife.svg</option>
-          <option value='images/teabag.svg'>teabag.svg</option>
-          <option value='images/tentacle.svg'>tentacle.svg</option>
-          <option value='images/triangle.svg'>triangle.svg</option>
-          <option value='images/umbrella.svg'>umbrella.svg</option>
-          <option value='images/voodoodoll.svg'>voodoodoll.svg</option>
-          <option value='images/wallet.svg'>wallet.svg</option>
+          <option value='images/badges/apple.svg'>apple.svg</option>
+          <option value='images/badges/bowling.svg'>bowling.svg</option>
+          <option value='images/badges/box.svg'>box.svg</option>
+          <option value='images/badges/cabbage.svg'>cabbage.svg</option>
+          <option value='images/badges/cactus.svg'>cactus.svg</option>
+          <option value='images/badges/can.svg'>can.svg</option>
+          <option value='images/badges/cat.svg'>cat.svg</option>
+          <option value='images/badges/cleaver.svg'>cleaver.svg</option>
+          <option value='images/badges/cockroach.svg'>cockroach.svg</option>
+          <option value='images/badges/coffin.svg'>coffin.svg</option>
+          <option value='images/badges/cookie.svg'>cookie.svg</option>
+          <option value='images/badges/cup.svg'>cup.svg</option>
+          <option value='images/badges/fish.svg'>fish.svg</option>
+          <option value='images/badges/floppydisk.svg'>floppydisk.svg</option>
+          <option value='images/badges/gyro.svg'>gyro.svg</option>
+          <option value='images/badges/heart.svg'>heart.svg</option>
+          <option value='images/badges/knife.svg'>knife.svg</option>
+          <option value='images/badges/pill.svg'>pill.svg</option>
+          <option value='images/badges/pillbottle.svg'>pillbottle.svg</option>
+          <option value='images/badges/potatoes.svg'>potatoes.svg</option>
+          <option value='images/badges/pumpkin.svg'>pumpkin.svg</option>
+          <option value='images/badges/r2d2.svg'>r2d2.svg</option>
+          <option value='images/badges/rainbow.svg'>rainbow.svg</option>
+          <option value='images/badges/scissors.svg'>scissors.svg</option>
+          <option value='images/badges/shoe.svg'>shoe.svg</option>
+          <option value='images/badges/skateboard.svg'>skateboard.svg</option>
+          <option value='images/badges/smartphone.svg'>smartphone.svg</option>
+          <option value='images/badges/snowglobe.svg'>snowglobe.svg</option>
+          <option value='images/badges/sofa.svg'>sofa.svg</option>
+          <option value='images/badges/swissarmyknife.svg'>swissarmyknife.svg</option>
+          <option value='images/badges/teabag.svg'>teabag.svg</option>
+          <option value='images/badges/tentacle.svg'>tentacle.svg</option>
+          <option value='images/badges/triangle.svg'>triangle.svg</option>
+          <option value='images/badges/umbrella.svg'>umbrella.svg</option>
+          <option value='images/badges/voodoodoll.svg'>voodoodoll.svg</option>
+          <option value='images/badges/wallet.svg'>wallet.svg</option>
         </select>
+      </div>
+      <div class='temp-objects'>
+        <button id='temp-button' type='button'>temp animation</button>
+        <button id='random-button' type='button'>random temp animation</button>
         <select id='test-method' name='select method'>
           <option disable selected>select method</option>
           <option value='acquire'>acquire</option>
@@ -59,8 +62,17 @@
         </select>
       </div>
       <div class='static-objects'>
-        <button id='static-button' type='button'>static object</button>
-        <img src='' width='150'>
+        <button id='static-button' type='button'>static animation</button>
+        <select id='static-method' name='select method'>
+          <option disable selected>select method</option>
+          <option value='jello'>jello</option>
+          <option value='bounce'>bounce</option>
+          <option value='shake'>shake</option>
+          <option value='rubberBand'>rubberBand</option>
+          <option value='swing'>swing</option>
+          <option value='tada'>tada</option>
+          <option value='wobble'>wobble</option>
+        </select>
       </div>
       <div class='screen'>
         <button id='screen-shake' type='button'>screen shake!</button>
