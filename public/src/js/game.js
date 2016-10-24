@@ -52,6 +52,8 @@ var Game = {
 
   currentScore: 0,
 
+  operators: ['+', '-', '/', 'x'],
+
   grabBadge: function(tier){
     tier = tier || 'tierOne';
     var thisTier = (Game.badges[tier]);
@@ -101,6 +103,98 @@ var Game = {
         .find('.badgeCount')
         .text(Game.currentBadges[badge.name]);
     }
+  },
+
+  getOperand(){
+    return Math.floor(Math.random()*9);
+  },
+
+  getOperator(){
+    var index = Math.floor(Math.random()*4);
+    return Game.operators[index];
+  },
+
+  generateEquation(){
+    Game.equation.num1 = Game.getOperand();
+    Game.equation.num2 = Game.getOperand();
+    Game.equation.operator = Game.getOperator();
+    if (Game.equation.operator === '/'){
+      if (Game.equation.num1 % Game.equation.num2 !== 0){
+          Game.equation.operator = '+';
+      }
+    }
+    Game.generateSolution();
+  },
+
+  generateSolution(){
+    Game.equation.solution = utils.calculate(Game.equation);
+    if (Game.equation.solution === undefined){
+      Game.equation.solution = 0;
+      Game.equation.truth = false;
+    } else if (Math.random() >= 0.5){
+      Game.equation.solution = utils.scramble(Game.equation.solution);
+      Game.equation.truth = false;
+    } else {
+      Game.equation.truth = true;
+    }
+  },
+
+  displayEquation(){
+  $('#L')
+    .find('img')
+    .attr('src', '../images/numerals/' +utils.getNumeral(Game.equation.num1));
+  $('#R')
+    .find('img')
+    .attr('src', '../images/numerals/' +utils.getNumeral(Game.equation.num2));
+  $('#operator')
+    .find('img')
+    .attr('src', '../images/operators/' +utils.getOperator(Game.equation.operator));
+  $('#solution')
+    .find('p')
+    .text(Game.equation.solution);
+  },
+
+  startTimer(){
+
+  },
+
+  gameRound(callback){
+    callback = callback || function(){};
+    Game.generateEquation();
+    Game.displayEquation();
+  },
+
+  check(bool){
+    console.log(bool);
+    console.log(Game.equation.truth);
+    if (Game.equation.truth == bool){
+      console.log("right!");
+      Game.grabBadge();
+      Game.reset();
+    }
+    else {
+      console.log("wrong!");
+      Game.gameOver();
+    }
+  },
+
+  gameOver(){
+    $('#wrong').off('mousedown mouseup');
+    $('#right').off('mousedown mouseup');
+    animations.static('#game-container', 'shake');
+    $('#game-over').fadeIn();
+    console.log('game over!');
+  },
+
+  reset(){
+    Game.equation = {};
+    Game.gameRound();
+  },
+
+  init(){
+    Game.reset();
+    addListeners.wrong('#wrong');
+    addListeners.right('#right');
   }
 };
 
