@@ -52,8 +52,15 @@ var Game = {
 
   operators: ['+', '-', '/', 'x'],
 
+  tiers: ['tierOne', 'tierTwo', 'tierThree', 'tierFour', 'tierFive', 'tierSix'],
+
+  randomTier: function(){
+    var index = Math.floor(Math.random()*Game.tiers.length);
+    return Game.tiers[index];
+  },
+
   grabBadge: function(tier){
-    tier = tier || 'tierOne';
+    tier = tier || Game.randomTier();
     var thisTier = (Game.badges[tier]);
     var index = Math.floor(Math.random()*thisTier.length);
     var badgeObj = thisTier[index];
