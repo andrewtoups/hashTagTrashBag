@@ -20,7 +20,7 @@ var utils = {
     ['mobile-phone-with-nine-keys.svg', 'nine-1.svg', 'nine-black-tiles.svg', 'nine-oclock-on-circular-clock.svg', 'nine-persons-symbol.svg', 'nine-persons.svg', 'nine-small-circles.svg', 'nine.svg', 'number-9-key-on-keyboard.svg', 'number-nine-in-a-circle.svg', 'number-nine.svg', 'telephone-auricular-with-nine-circular-buttons.svg',  ],
   ],
 
-  operators: ['plus.svg', 'minus.svg', 'dividedby.svg', 'times.svg'],
+  operators: {'+': 'plus.svg', '-': 'minus.svg', '/': 'dividedby.svg', 'x': 'times.svg'},
 
   loader: {
     isLoading: false,
@@ -40,8 +40,41 @@ var utils = {
     return num+ '/' +numeral[index];
   },
 
-  getRandomOperator: function(num){
-    var index = Math.floor(Math.random()*utils.operators.length);
-    return utils.operators[index];
+  getOperator: function(operator){
+    return utils.operators[operator];
+  },
+
+  calculate: function(equation){
+    switch (equation.operator) {
+      case '+':
+        return Number(equation.num1) + Number(equation.num2);
+        break;
+      case '-':
+        return Number(equation.num1) - Number(equation.num2);
+        break;
+      case '/':
+        if (equation.num2 === 0){
+          return undefined;
+        }
+        return Number(equation.num1) / Number(equation.num2);
+        break;
+      case 'x':
+        return Number(equation.num1) * Number(equation.num2);
+        break;
+      default:
+        return;
+    }
+  },
+
+  scramble: function(num){
+    num = num || Math.floor(Math.random()*9);
+    num = Number(num);
+    var diff = Math.ceil(Math.random()*num)/2;
+    if (Math.random() >= 0.5){
+      num += diff;
+    } else {
+      num -= diff;
+    }
+    return Math.round(num);
   }
 };
