@@ -67,14 +67,22 @@ var utils = {
   },
 
   scramble: function(num){
-    num = num || Math.floor(Math.random()*9);
+    console.log('true answer: '+ num);
+    num = Math.abs(num) + 1 || Math.ceil(Math.random()*9);
     num = Number(num);
     var diff = Math.ceil(Math.random()*num)/2;
+    var falseAnswer;
     if (Math.random() >= 0.5){
-      num += diff;
+      falseAnswer = num + diff + 2;
     } else {
-      num -= diff;
+      falseAnswer = num - diff - 2;
     }
-    return Math.round(num);
+    console.log('false answer: '+ Math.round(falseAnswer));
+    falseAnswer = Math.round(falseAnswer);
+    if (falseAnswer === num) {
+      utils.scramble(num);
+    } else {
+      return falseAnswer;
+    }
   }
 };
