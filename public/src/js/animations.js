@@ -29,7 +29,7 @@ var animations = {
     var elem = $('<img>')
     .attr({
       'src': content,
-      'width': '100px',
+      'width': '150px',
     })
     .css({
       'position': 'absolute',
@@ -83,11 +83,12 @@ var animations = {
       .clone()
       .attr({
         'src': '../images/operators/plus.svg',
-        'height': '15px'
+        'height': '40px'
       })
       .css({
         'left': '-=35px',
         'top': '+=10px',
+        'filter': 'hue-rotate(180deg)'
       })
       .add(elem);
     return plus;

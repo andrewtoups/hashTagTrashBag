@@ -20,6 +20,12 @@
   animation-iteration-count: infinite;
 }
 
+.animated.zoomInOut {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+
+}
+
 .animated.hinge {
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
@@ -2950,8 +2956,8 @@
 
   50% {
     opacity: 0;
-    -webkit-transform: scale3d(10, 10, 10);
-    transform: scale3d(10, 10, 10);
+    -webkit-transform: scale3d(5, 5, 5);
+    transform: scale3d(5, 5, 5);
   }
 
   to {
