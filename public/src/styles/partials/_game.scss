@@ -11,7 +11,8 @@
     @include custom-border();
     margin-top: 40px;
     position: relative;
-    // opacity: 0.6;
+    opacity: 1;
+    transition: 3s opacity ease;
 
     #header {
       h1 {
@@ -64,6 +65,10 @@
         &#solution {
           top: 375px;
           left: 200px;
+          p {
+            font-size: 70px;
+            margin: 0;
+          }
         }
 
         img {
