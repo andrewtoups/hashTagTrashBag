@@ -145,17 +145,17 @@ var Game = {
   },
 
   displayEquation(){
-  $('#L')
-    .find('img')
+    $('<img>')
+    .appendTo('#L')
     .attr('src', '../images/numerals/' +utils.getNumeral(Game.equation.num1));
-  $('#R')
-    .find('img')
+    $('<img>')
+    .appendTo('#R')
     .attr('src', '../images/numerals/' +utils.getNumeral(Game.equation.num2));
-  $('#operator')
-    .find('img')
+    $('<img>')
+    .appendTo('#operator')
     .attr('src', '../images/operators/' +utils.getOperator(Game.equation.operator));
-  $('#solution')
-    .find('p')
+    $('<p>')
+    .appendTo('#solution')
     .text(Game.equation.solution);
   },
 
@@ -186,25 +186,40 @@ var Game = {
   },
 
   check(bool){
-    console.log(bool);
-    console.log(Game.equation.truth);
     if (Game.equation.truth == bool){
-      console.log("right!");
-      Game.grabBadge();
-      Game.reset();
+      animations.zoomIn($('#game-container').find('span img'));
+      animations.zoomIn($('#game-container').find('span p').on('animationend', function(){
+        Game.grabBadge();
+        Game.reset();
+      }));
     }
     else {
-      console.log("wrong!");
       Game.gameOver();
     }
   },
 
+  checkForAnimations(){
+    if ($('#game-container').find('.animated').length){
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  endAnimations(){
+    var currentAnimations = $('#game-container').find('.animated');
+    $(currentAnimations).finish();
+  },
+
   gameOver(){
+    Game.killTimer();
     $('#wrong').off('mousedown mouseup');
     $('#right').off('mousedown mouseup');
-    animations.static('#game-container', 'shake');
-    $('#game-over').fadeIn();
-    console.log('game over!');
+    if (Game.checkForAnimations()){ Game.endAnimations(); }
+    animations.hinge($('#game-container').contents().not('#game-over').on('animationend', function(){
+      $('#game-over').fadeIn();
+    }));
+    animations.static($('#game-container'), 'shake');
   },
 
   reset(){
