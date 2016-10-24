@@ -1,3 +1,7 @@
+.gameBody {
+  overflow: hidden;
+}
+
 #game-container * {
   z-index: 0;
 }
@@ -36,7 +40,7 @@
           right: 25px;
           h3{
             font-size: 70px;
-            margin: 0;            
+            margin: 0;
           }
         }
       }

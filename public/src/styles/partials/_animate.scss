@@ -13,9 +13,6 @@
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  &:active {
-    @include animation(rainbow 50ms linear infinite);
-  }
 }
 
 .animated.infinite {
