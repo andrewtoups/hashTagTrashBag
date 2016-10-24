@@ -35,8 +35,6 @@ Badge.prototype = {
     animations.acquire(Game.path + this.image);
     // print description
     this.showText(this.item);
-    // show point value on screen
-
 
   },
 
@@ -73,7 +71,7 @@ var Game = {
   updateScore(badge){
     Game.currentScore += badge.value;
     $('#score').text(Game.currentScore);
-    // animations.acquire(badge.value.toString(), {'top': '40px', 'right': '40px'});
+    // animations.acquire(badge.value.toString(), {'top': '40', 'right': '40'});
   },
 
   updateInventory(badge){
@@ -92,7 +90,7 @@ var Game = {
     }
   },
 
-  updateCount(badge){
+  updateCount(badge) {
     if (Game.currentBadges[badge.name] === 2){
       var badgeCount = $('<div>')
         .attr('class', 'badgeCount')
