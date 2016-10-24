@@ -65,31 +65,31 @@ var animations = {
   },
 
   addPlus: function(elem){
-    var plus = $('<img>')
-      .append($(elem)
-        .contents()
-        .clone()
-      )
-      .css({
-        'left': '-=35px',
-        'top': '+=10px',
-      })
+
+    // var css = $(elem).css(['left', 'top', 'position']);
+    //
+    // var plus = $('<img>')
+    //   .attr({
+    //     'src': '../images/operators/plus.svg',
+    //     'height': '15px'
+    //   });
+    //
+    // var newParent = $('div')
+    // .css(css)
+    // .append(plus)
+    // .append(elem);
+
+    var plus = elem
+      .clone()
       .attr({
         'src': '../images/operators/plus.svg',
         'height': '15px'
       })
-        .add(elem);
-    // var plus = elem
-    //   .clone()
-    //   .attr({
-    //     'src': '../images/operators/plus.svg',
-    //     'height': '15px'
-    //   })
-    //   .css({
-    //     'left': '-=35px',
-    //     'top': '+=10px',
-    //   })
-    //   .add(elem);
+      .css({
+        'left': '-=35px',
+        'top': '+=10px',
+      })
+      .add(elem);
     return plus;
   },
 
@@ -141,26 +141,12 @@ var animations = {
   },
 
   static: function(elem, style){
-    if ($(elem).attr('class') === 'animated ' +style){
-      elem = animations.cancel(elem);
-      $(elem)
-      .toggleClass('animated ' +style)
-      .on('animationend', function(){
-        $(this).removeClass('animated ' +style);
-      });
-      console.log('in if');
-    }
     $(elem)
     .toggleClass('animated ' +style)
     .on('animationend', function(){
       $(this).removeClass('animated ' +style);
     });
   }
-
-
-
-
-
 
 };
 
