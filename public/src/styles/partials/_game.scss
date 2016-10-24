@@ -188,10 +188,10 @@
 
 .mainContainer * {
     display: inline-table;
+    vertical-align: bottom;
 }
 
 .mainContainer {
-    margin: 0 auto;
-    width: 796px;
     text-align: center;
+    margin: 0 auto;
 }

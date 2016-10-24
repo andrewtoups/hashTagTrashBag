@@ -167,14 +167,18 @@ var Game = {
       .on('animationend', function(){
         Game.gameOver();
       });
-    console.log('timer started');
+  },
+
+  endTimer(){
+    if ($('#gameTimer.startTimer')){
+      $('#gameTimer.startTimer').finish();
+    }
   },
 
   killTimer(){
     if ($('#gameTimer.startTimer')){
       $('#gameTimer.startTimer').finish();
       $('#gameTimer').remove();
-      console.log('timer killed');
     }
   },
 
