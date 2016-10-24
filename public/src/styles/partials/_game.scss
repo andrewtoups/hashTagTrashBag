@@ -9,7 +9,7 @@
 #game-container {
     width: 500px;
     height: 600px;
-    background: url('/public/images/background/trashcan-bg.jpg');
+    background: url('/hashTagTrashBag/public/images/background/trashcan-bg.jpg');
     background-position: top;
     background-size: 150%;
     @include custom-border();
@@ -106,12 +106,12 @@
 
         &#wrong {
           left: 50px;
-          background: url('/public/images/icons/error.svg') center;
+          background: url('/hashTagTrashBag/public/images/icons/error.svg') center;
           background-size: 125%;
         }
         &#right {
           right: 50px;
-          background: url('/public/images/icons/success.svg') center;
+          background: url('/hashTagTrashBag/public/images/icons/success.svg') center;
           background-size: 125%;
         }
         &:active {
