@@ -61,6 +61,7 @@ var Game = {
 
   grabBadge: function(tier){
     tier = tier || Game.randomTier();
+    // tier = tier || 'tierOne';
     var thisTier = (Game.badges[tier]);
     var index = Math.floor(Math.random()*thisTier.length);
     var badgeObj = thisTier[index];
