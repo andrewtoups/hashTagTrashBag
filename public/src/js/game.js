@@ -70,7 +70,7 @@ var Game = {
 
   updateScore(badge){
     Game.currentScore += badge.value;
-    $('#score').text(Game.currentScore);
+    $('#score').find('h3').text(Game.currentScore);
     // animations.acquire(badge.value.toString(), {'top': '40', 'right': '40'});
   },
 
