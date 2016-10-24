@@ -123,6 +123,23 @@
       background: whitesmoke;
       opacity: 0.8;
     }
+
+    #game-over{
+      position: absolute;
+      width: 500px;
+      height: 600px;
+      top: 0;
+      left: 0;
+      background: black;
+      opacity: .8;
+      display: none;
+      text-align: center;
+      p {
+        color: white;
+        margin: 250px 0;
+        font-size: 85px;
+      }
+    }
 }
 
 .leftInventory,
