@@ -153,11 +153,27 @@ var Game = {
   },
 
   startTimer(){
+    $('<div>')
+      .attr('id','gameTimer')
+      .appendTo('#timer')
+      .toggleClass('startTimer')
+      .on('animationend', function(){
+        Game.gameOver();
+      });
+    console.log('timer started');
+  },
 
+  killTimer(){
+    if ($('#gameTimer.startTimer')){
+      $('#gameTimer.startTimer').finish();
+      $('#gameTimer').remove();
+      console.log('timer killed');
+    }
   },
 
   gameRound(callback){
     callback = callback || function(){};
+    Game.startTimer();
     Game.generateEquation();
     Game.displayEquation();
   },
@@ -186,6 +202,7 @@ var Game = {
 
   reset(){
     Game.equation = {};
+    Game.killTimer();
     Game.gameRound();
   },
 
