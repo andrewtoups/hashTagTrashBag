@@ -15,7 +15,7 @@
       .leftInventory
         - (classesleft).each do |badgeclass|
           %span.badge(class='#{badgeclass}')
-            %img(src='/images/icons/question.svg')
+            %img(src='../images/icons/question.svg')
 
 
       #game-container
@@ -28,14 +28,14 @@
           %p.hyper I am the message that pops up when you get a reward. What happens when I am long?
         #equation
           %span#L
-            %img
+            -# %img
           %span#operator
-            %img
+            -# %img
           %span#R
-            %img
+            -# %img
           %img#equals(src='../images/operators/equals.svg')
           %span#solution.hyper
-            %p
+            -# %p
         #controls
           %button#wrong(type='button')
           %button#right(type='button')
@@ -46,11 +46,11 @@
       .rightInventory
         - (classesright).each do |badgeclass|
           %span.badge(class='#{badgeclass}')
-            %img(src='/images/icons/question.svg')
+            %img(src='../images/icons/question.svg')
 
 
-    %script(src="../../src/js/jquery-3.1.1.js")
-    %script(src="../../src/js/utils.js")
-    %script(src="../../src/js/animations.js")
-    %script(src="../../src/js/game.js")
-    %script(src="../../src/js/badges.js")
+    %script(src="../src/js/jquery-3.1.1.js")
+    %script(src="../src/js/utils.js")
+    %script(src="../src/js/animations.js")
+    %script(src="../src/js/game.js")
+    %script(src="../src/js/badges.js")
