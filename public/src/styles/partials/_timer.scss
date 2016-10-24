@@ -2,7 +2,7 @@
   #gameTimer {
     width: 80px;
     height: 80px;
-    background: url('/../public/images/background/num-sprite.png') left center;
+    background: url('/public/images/background/num-sprite.png') left center;
     background-size: cover;
     &.startTimer{
       @include animation(timer 7s reverse steps(7));
