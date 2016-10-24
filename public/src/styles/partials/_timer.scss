@@ -1,0 +1,15 @@
+
+  #gameTimer {
+    width: 80px;
+    height: 80px;
+    background: url('/../images/background/num-sprite.png') left center;
+    background-size: cover;
+    &.startTimer{
+      @include animation(timer 7s reverse steps(7));      
+    }
+  }
+
+
+@include keyframes(timer) {
+  100% {background-position: -560px;}
+}
