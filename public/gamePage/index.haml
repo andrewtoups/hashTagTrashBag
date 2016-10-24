@@ -26,14 +26,20 @@
         #message
           %p.hyper I am the message that pops up when you get a reward. What happens when I am long?
         #equation
-          %span#L.hyper
-          %span#operator.hyper
-          %span#R.hyper
+          %span#L
+            %img
+          %span#operator
+            %img
+          %span#R
+            %img
           %img#equals(src='../images/operators/equals.svg')
           %span#solution.hyper
+            %p
         #controls
           %button#wrong(type='button')
           %button#right(type='button')
+        #game-over
+          %p GAME OVER!!!
 
 
       .rightInventory
