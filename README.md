@@ -15,3 +15,7 @@ An equation will appear on screen.
 If the equation is correct, click the '✓' button.
 
 If the equation is incorrect, click the 'x' button.
+
+## Play here
+
+[Clicky](https://andrewtoups.github.io/hashTagTrashBag/public/gamePage/)
