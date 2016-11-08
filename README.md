@@ -19,3 +19,9 @@ If the equation is incorrect, click the 'x' button.
 ## Play here
 
 [Clicky](https://andrewtoups.github.io/hashTagTrashBag/public/gamePage/)
+
+## Todo
+
+* Add scoring tiers tied to answer time.
+* Fix message window formatting
+* Integrate backend... someday... I can hope ;__;
