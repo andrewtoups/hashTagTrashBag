@@ -128,13 +128,21 @@
     #message{
       position: absolute;
       margin: 0;
-      bottom: 25px;
+      font-size: 1.5em;
+      bottom: 15px;
       left: 25px;
       width:450px;
       height:75px;
       @include custom-border();
       background: whitesmoke;
       opacity: 0.8;
+      max-height: 3em;
+      overflow: hidden;
+      p {
+        margin: 0;
+        padding: .1em;
+        font-weight: bolder;
+      }
     }
 
     #game-over{
